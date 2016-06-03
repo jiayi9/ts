@@ -1,3 +1,17 @@
+InsPack <- function(pack) { 
+  if (!pack %in% rownames(installed.packages())) { 
+    print(paste("installing",pack)) 
+    install.packages(pack) 
+  } else {
+    print(paste(pack," already installed")) 
+  }
+}
+
+InsPack("shiny")
+InsPack("tseries")
+InsPack("forecast")
+InsPack("changepoint")
+
 library(shiny)
 library(tseries)
 library(forecast)
